@@ -189,7 +189,7 @@ def _lookup_notebook(path, library):
         idx = import_notebook(index)
         library_path = idx.LIBRARIES[library]["path"]
     lib = import_notebook(library_path)
-    return _cache_notebook(lib.NOTEBOOKS[path]["path"])
+    return _get_notebook(lib.NOTEBOOKS[path]["path"])
 
 
 def _trace(line):

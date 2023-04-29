@@ -25,10 +25,25 @@ To install datamachine, run the following command:
 %pip install datamachine
 ```
 
-## Usage
+## Importing datamachine
 
-Once you have installed datamachine, you can use it to execute and import notebooks.
+Once you've installed datamachine, you can import it.  
+The convention is to name the module instance `dm`.  
 
+```python
+import datamachine as dm
+```
+### Importing a Notebook as a Module
+
+To import a notebook as a module, use the `import_notebook` function:
+
+```python
+nbo = dm.import_notebook(
+    "https://colab.research.google.com/drive/1y7x3BDkmaz6k93QjENanKHudLV8xB96Q?usp=sharing",
+)
+```
+
+This command imports the notebook located at `"./module.ipynb"` as a module named `"nbo"`.
 ### Executing a Notebook
 
 To execute a notebook with parameters, use the `execute_notebook` function:
@@ -54,17 +69,7 @@ params = dm.execute_params({"EIN": "454547709","TYPE": "detail"})
 EIN = params["EIN"]
 ```
 
-### Importing a Notebook as a Module
 
-To import a notebook as a module, use the `import_notebook` function:
-
-```python
-import datamachine as dm
-
-nbo = dm.import_notebook("./module.ipynb")
-```
-
-This command imports the notebook located at `"./module.ipynb"` as a module named `"nbo"`.
 
 ## Conclusion
 

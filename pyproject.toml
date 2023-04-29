@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "datamachine"
-version = "0.0.8"
+version = "0.1.0"
 dependencies = []
 authors = [
-  { name="Dave Killough", email="dave.killough@gmail.com" },
+  { name="Dave Killough", email="dave@benevolentmachines.org" },
 ]
 description = "Modular Notebooks"
 readme = "README.md"
@@ -18,3 +18,5 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.urls]  # Optional
+"Project" = "https://github.com/dave-killough/datamachine"
