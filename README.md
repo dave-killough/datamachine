@@ -1,13 +1,11 @@
-<p align="left" style="width: 20%; max-width: 240px; min-width: 80px;" >
-  <img src="https://storage.googleapis.com/benevolent-machines/bm.svg" 
+<p align="left" >
+  <img src="https://storage.googleapis.com/benevolentmachines/datamachine2.svg" 
        title="BenevolentMachines.Org">
 </p>
 
-# datamachine 
-
 ## Welcome to the Machine!
 
-datamachine is a powerful Python package that allows you to execute cloud Python notebooks with parameters and import cloud notebooks as modules. With datamachine, you can reference notebooks from various sources such as local files, Colab links, Github links, and HTTP links, and execute or import them with ease. You can also assign codes to files or links and store them in a library, which is a collection of codes and their corresponding links. Libraries are stored in JSON format with a dictionary of libraries to their links. An index is a collection of libraries that is also stored in a JSON file.
+datamachine is a powerful Python package that allows you to execute cloud Python notebooks with parameters and import cloud notebooks as modules. With datamachine, you can reference notebooks from various sources such as local files, Colab links, Github links, and HTTP links, and execute or import them with ease. You can also assign codes to files or links and store them in a library, which is a collection of codes and their corresponding links. Libraries are stored in JSON format with a dictionary of notebooks to their links. 
 
 ## Features
 
@@ -33,21 +31,28 @@ Once you have installed datamachine, you can use it to execute and import notebo
 
 ### Executing a Notebook
 
-To execute a notebook, use the `execute_notebook` function:
+To execute a notebook with parameters, use the `execute_notebook` function:
 
 ```python
 import datamachine as dm
-
 dm.execute_notebook(
-    "execute.ipynb", 
-    params={
-        "EIN": "343434343"
-    },
-    html="output.html",
+    "execute.ipynb", html="output.html",
+    params={"EIN": "200549531","TYPE": "summary"},
 )
 ```
 
-This command executes the notebook located at `"execute.ipynb"` with the parameter `"EIN"` set to `"343434343"`. The output is saved in an HTML file named `"output.html"`.
+This function executes the notebook located at `"execute.ipynb"` with the parameter `"EIN"` 
+set to `"200549531"`. The output is saved in an HTML file named `"output.html"`.
+
+In order to receive the EIN parameter in the executed notebook, simply invoke 
+the `execute_params` function with a passed dictionary containing the parameter.
+This function provides the test values when you're directly running the notebook, 
+and uses the passed values when invoked via `execute_notebook`.    
+```python
+import datamachine as dm
+params = dm.execute_params({"EIN": "454547709","TYPE": "detail"})
+EIN = params["EIN"]
+```
 
 ### Importing a Notebook as a Module
 

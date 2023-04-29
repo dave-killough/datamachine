@@ -52,7 +52,8 @@ def _cache_notebook(notebook):
     if "temp" not in notebook:  # new entry
         number = CURRENT["number"] = CURRENT["number"] + 1
         file_name = f"d_{CURRENT['process']}_{str(number)}.ipynb"
-        notebook["temp"] = f"{CURRENT['folder']}{os.path.sep}{file_name}"
+        file_name = f"{CURRENT['folder']}{os.path.sep}{file_name}"
+        notebook["temp"] = file_name
 
     if notebook["pull"].lower().startswith("https:"):
         with urlopen(notebook["pull"]) as in_url:
@@ -103,7 +104,7 @@ def _get_notebook(path, library=None, force_reload=False):
 
     if "path" in notebook:
         notebook["cached"] = True  # already imported
-        
+
     else:  # new entry
         notebook["cached"] = False  # not yet imported
         notebook["path"] = path
