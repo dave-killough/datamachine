@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/datamachine/__init__.py
+src/datamachine/_modular.py
+src/datamachine/xxx.py
+src/datamachine.egg-info/PKG-INFO
+src/datamachine.egg-info/SOURCES.txt
+src/datamachine.egg-info/dependency_links.txt
+src/datamachine.egg-info/top_level.txt

@@ -1,0 +1,11 @@
+/.vscode
+/datamachine_temp
+/deploy.ipynb
+/dist
+/execute.ipynb
+/module.ipynb
+/output.html
+/test.py
+/test2.ipynb
+/testing.ipynb
+/__pycache__
