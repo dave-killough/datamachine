@@ -103,6 +103,7 @@ def _get_notebook(path, library=None, force_reload=False):
 
     if "path" in notebook:
         notebook["cached"] = True  # already imported
+        
     else:  # new entry
         notebook["cached"] = False  # not yet imported
         notebook["path"] = path
