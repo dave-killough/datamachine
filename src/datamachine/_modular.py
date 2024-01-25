@@ -88,6 +88,7 @@ def _get_notebook(path, library=None, force_reload=False):
 
     elif path.startswith("https://github"):
         url = path.replace("github.com", "raw.githubusercontent.com")
+        url = url.replace("/blob/","/")
         notebook["pull"] = url
 
     elif path.startswith("https:"):

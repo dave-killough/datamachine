@@ -5,7 +5,7 @@
 
 ## Modular Notebooks
 
-Imagine an easy way to reuse Python notebooks in the cloud. datamachine is a useful Python package that enables you to import notebooks as modules and execute Python notebooks with parameters. With datamachine, you can load notebooks from various sources such as local files, Colab links, and Github links, and then execute or import them with ease. You can also organize notebooks into libraries that use simple codes for easy access to commonly used notebooks. 
+Imagine an easy way to reuse Python notebooks in the cloud. datamachine is a useful Python package that enables you to import notebooks as modules. With datamachine, you can load notebooks from various sources such as local files, Colab links, and Github links, and then import them with ease. You can also organize notebooks into libraries that use simple codes for easy access to commonly used notebooks. 
 <p align="left" >
   <img src="https://storage.googleapis.com/benevolentmachines/dm_overview.png">
 </p>
@@ -13,8 +13,6 @@ Imagine an easy way to reuse Python notebooks in the cloud. datamachine is a use
 ## Features
 
 - **Import notebooks as modules**: Importing notebooks as modules is a breeze with datamachine. You can import notebooks from various sources such as local files, Colab links, Github links, and HTTP links.
-
-- **Execute notebooks with parameters**: You can execute cloud notebooks with parameters, which is particularly useful when you want to run a notebook multiple times with different inputs.
 
 - **Libraries**: datamachine supports user-defined libraries that will make your reusable notebook modules much easier to publish and use by others.   
 
@@ -58,40 +56,6 @@ nbo.monthly_rulings()
   <img src="https://storage.googleapis.com/benevolentmachines/dm_module2.gif">
 </p>
 
-
-### Executing a Notebook
-
-To execute a notebook with parameters, use the `execute_notebook` function:
-
-```python
-import datamachine as dm
-dm.execute_notebook("execute.ipynb", 
-    html="output.html",
-    params={
-        "EIN": "200549531",
-        "TYPE": "summary"
-    },
-)
-```
-
-This function executes the notebook located at `"execute.ipynb"` with the parameter `"EIN"` 
-set to `"200549531"`. The output is saved in an HTML file named `"output.html"`.
-
-In order to receive the EIN and TYPE parameters in the executed notebook, simply invoke 
-the `execute_params` function with a passed dictionary containing the parameters.
-This function provides the test values when you're directly running the notebook, 
-and uses the passed values when invoked via `execute_notebook`.    
-```python
-import datamachine as dm
-params = dm.execute_params({
-    "EIN": "454547709",
-    "TYPE": "detail"
-})
-EIN = params["EIN"]
-```
-
-
-
 ## Conclusion
 
-datamachine is a powerful tool for anyone who wants to reuse Python notebooks. With its flexible features and easy-to-use commands, datamachine makes it easy to execute and import notebooks from various sources, store collections of code and their corresponding links in a library, and organize your code with an index. So why wait? Install datamachine today and take your notebook experience to the next level!
+datamachine is a powerful tool for anyone who wants to reuse Python notebooks. With its flexible features and easy-to-use commands, datamachine makes it easy to import notebooks from various sources, store collections of code and their corresponding links in a library, and organize your code with an index. So why wait? Install datamachine today and take your notebook experience to the next level!
